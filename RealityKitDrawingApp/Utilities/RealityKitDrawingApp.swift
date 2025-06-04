@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-The SwiftUI `App` structure, which acts as the entry point of the app.
-  Defines the windows and spaces used by the app as well as global state.
-*/
+//
+//  RealityKitDrawingApp.swift
+//  Linezz
+//
+//  Created by Sayan on 13.05.2025.
+//
 
 import SwiftUI
 
