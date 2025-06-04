@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Style settings for the solid brush type.
-*/
+//
+//  SolidBrushStyleProvider.swift
+//  Linezz
+//
+//  Created by Sayan on 19.05.2025.
+//
 
 import Foundation
 import Collections

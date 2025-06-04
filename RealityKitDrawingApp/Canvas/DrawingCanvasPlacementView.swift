@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view that provides a user interface for controlling the location of the drawing canvas.
-*/
+//
+//  DrawingCanvasPlacementView.swift
+//  Linezz
+//
+//  Created by Sayan on 19.05.2025.
+//
 
 import SwiftUI
 import RealityKit

@@ -1,3 +1,20 @@
+Copyright © 2025 Sayan Lakhoua. All Rights Reserved.
+Copyright © 2024 Apple Inc. All Rights Reserved.
+
+OVERVIEW
+------------------------------------------------------------------------------
+
+This project ("Linezz") (the “Software”) was conceived and coded by **Sayan Lakhoua**.
+Its user-interface and some parts of the code are inspired by Apple’s sample code: "Creating a spatial drawing app with RealityKit", and it
+incorporates specific source files and snippets supplied by Apple Inc.
+(collectively, the “Sample Code”).
+The Sample Code is redistributed here exactly as provided by Apple Inc. and
+remains subject to Apple’s license reproduced below.
+All other portions of the Software are © 2025 Sayan Lakhoua and are offered under the *same* license terms so the entire codebase can be handled uniformly.
+
+
+APPLE LICENSE
+------------------------------------------------------------------------------
 Copyright 2024 Apple Inc. All Rights Reserved.
 
 IMPORTANT:  This Apple software is supplied to you by Apple

@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Various math functions to supplement built-in math.
-*/
+//
+//  MathUtilities.swift
+//  Linezz
+//
+//  Created by Sayan on 14.05.2025.
+//
 
 import Foundation
 import simd

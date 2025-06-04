@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Evaluates and stores information about strokes based on someone's inputs and style parameters.
-*/
+//
+//  DrawingSource.swift
+//  Linezz
+//
+//  Created by Sayan on 25.05.2025.
+//
 
 import Algorithms
 import Collections

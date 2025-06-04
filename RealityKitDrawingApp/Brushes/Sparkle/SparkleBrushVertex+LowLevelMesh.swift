@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A listing of the `LowLevelMesh` attributes that correspond with the structure,
-  `SparkleBrushVertex`, in the Metal Shading Language.
-*/
+//
+//  SparkleBrushVertex+LowLevelMesh.swift
+//  Linezz
+//
+//  Created by Sayan on 28.05.2025.
+//
 
 import RealityKit
 

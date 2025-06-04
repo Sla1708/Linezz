@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view that displays a person's drawing in an immersive space and handles their input.
-*/
+//
+//  DrawingMeshView.swift
+//  Linezz
+//
+//  Created by Sayan on 15.05.2025.
+//
 
 import Collections
 import Foundation

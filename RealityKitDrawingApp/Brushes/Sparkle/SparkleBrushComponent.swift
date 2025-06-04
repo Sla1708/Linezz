@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A RealityKit component and system to facilitate the generation of sparkle brush strokes.
-*/
+//
+//  SparkleBrushComponent.swift
+//  Linezz
+//
+//  Created by Sayan on 28.05.2025.
+//
 
 import Foundation
 import RealityKit

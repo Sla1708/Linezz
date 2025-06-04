@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Facilitates the generation of the mesh of the sparkle brush given the result of the brush's GPU particle simulation.
-*/
+//
+//  SparkleDrawingMeshGenerator+LowLevelMesh.swift
+//  Linezz
+//
+//  Created by Sayan on 28.05.2025.
+//
 
 import RealityKit
 import Metal

@@ -1,12 +1,8 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Vertex data for the solid brush type, defined in Metal Shading Language.
-*/
-
 //
 //  SolidBrushVertex.h
+//  Linezz
+//
+//  Created by Sayan on 21.05.2025.
 //
 
 #pragma once

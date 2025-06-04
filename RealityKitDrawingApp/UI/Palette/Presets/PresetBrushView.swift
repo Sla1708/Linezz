@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view to display a preview of a brush preset, and a view to display a collection of these presets.
-*/
+//
+//  PresetBrushView.swift
+//  Linezz
+//
+//  Created by Sayan on 14.05.2025.
+//
 
 import SwiftUI
 import RealityKit

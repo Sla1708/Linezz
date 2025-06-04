@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Views that control the settings selection on the palette for each style of brush.
-*/
+//
+//  BrushTypeView.swift
+//  Linezz
+//
+//  Created by Sayan on 15.05.2025.
+//
 
 import SwiftUI
 import RealityKit

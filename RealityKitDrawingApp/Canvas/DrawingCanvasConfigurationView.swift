@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view that allows a person to configure the size of their drawing canvas, and instructs how to change the location.
-*/
+//
+//  DrawingCanvasConfigurationView.swift
+//  Linezz
+//
+//  Created by Sayan on 19.05.2025.
+//
 
 import SwiftUI
 import RealityKit

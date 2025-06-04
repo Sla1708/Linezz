@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A class that manages the generation of meshes for the sparkle brush, using `LowLevelMesh` and a GPU particle simulation.
-*/
+//
+//  SparkleDrawingMeshGenerator.swift
+//  Linezz
+//
+//  Created by Sayan on 27.05.2025.
+//
 
 import Foundation
 import Collections

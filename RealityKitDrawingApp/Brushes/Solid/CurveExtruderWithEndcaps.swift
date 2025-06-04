@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A refinement on top of `CurveExtruder` which facilitates the generation of spherical endcaps for each extruded shape.
-*/
+//
+//  CurveExtruderWithEndcaps.swift
+//  Linezz
+//
+//  Created by Sayan on 26.05.2025.
+//
 
 import Foundation
 import Collections

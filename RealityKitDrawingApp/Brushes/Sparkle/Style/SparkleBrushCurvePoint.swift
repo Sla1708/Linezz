@@ -1,10 +1,10 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
+//
+//  SparkleBrushCurvePoint.swift
+//  Linezz
+//
+//  Created by Sayan on 27.05.2025.
+//
 
-Abstract:
-A styled point to be passed to the `SparkleDrawingMeshGenerator`.
-  A list of these defines the curve of a sparkle brush stroke.
-*/
 
 /// `SparkleBrushCurvePoints` are emitted by the `SparkleBrushStyleProvider` and consumed by the `SparkleDrawingMeshGenerator`.
 ///

@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A sampler to interpolate between points to make a smooth curve.
-*/
+//
+//  SmoothCurveSampler.swift
+//  Linezz
+//
+//  Created by Sayan on 23.05.2025.
+//
 
 import Collections
 

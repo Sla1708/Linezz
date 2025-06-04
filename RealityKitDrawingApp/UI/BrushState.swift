@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-App state to describe the current state of the brush.
-*/
+//
+//  BrushState.swift
+//  Linezz
+//
+//  Created by Sayan on 14.05.2025.
+//
 
 enum BrushPreset: Equatable {
     case solid(settings: SolidBrushStyleProvider.Settings)

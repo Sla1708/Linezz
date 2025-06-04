@@ -1,9 +1,10 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
+//
+//  SolidDrawingMeshGenerator.swift
+//  Linezz
+//
+//  Created by Sayan on 24.05.2025.
+//
 
-Abstract:
-A class that manages the use of `SolidBrushComponent` with an entity, so that solid brush strokes can be generated.
-*/
 
 import RealityKit
 

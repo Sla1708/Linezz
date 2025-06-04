@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A structure that receives input events and uses them to style points for the sparkle brush.
-*/
+//
+//  SparkleBrushStyleProvider.swift
+//  Linezz
+//
+//  Created by Sayan on 27.05.2025.
+//
 
 /// Receives input events and generates a `SparkleBrushCurvePoint` for that event.
 ///

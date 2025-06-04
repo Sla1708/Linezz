@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A listing of the `LowLevelMesh` attributes corresponding with the structure,
-  `SolidBrushVertex`, in Metal Shading Language.
-*/
+//
+//  SolidBrushVertex+LowLevelMesh.swift
+//  Linezz
+//
+//  Created by Sayan on 24.05.2025.
+//
 
 import RealityKit
 

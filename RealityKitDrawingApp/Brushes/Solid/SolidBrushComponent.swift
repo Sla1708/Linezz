@@ -1,9 +1,10 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
+//
+//  SolidBrushComponent.swift
+//  Linezz
+//
+//  Created by Sayan on 24.05.2025.
+//
 
-Abstract:
-A RealityKit component and system to facilitate the generation of solid brush strokes.
-*/
 
 import RealityKit
 

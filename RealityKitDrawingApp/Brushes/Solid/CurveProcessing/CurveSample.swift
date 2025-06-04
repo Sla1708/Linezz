@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Data to represent the shape of the curve at a given point.
-*/
+//
+//  CurveSample.swift
+//  Linezz
+//
+//  Created by Sayan on 22.05.2025.
+//
 
 import simd
 

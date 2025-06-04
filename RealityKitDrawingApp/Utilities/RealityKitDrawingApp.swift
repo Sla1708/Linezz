@@ -1,5 +1,5 @@
 //
-//  RealityKitDrawingApp.swift
+//  DrawingCanvasVisualizationView.swift
 //  Linezz
 //
 //  Created by Sayan on 13.05.2025.

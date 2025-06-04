@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Holds information about the state of the drawing in a given instance of the app.
-  Also handles receiving inputs from the input provider and using it to draw.
-*/
+//
+//  DrawingDocument.swift
+//  Linezz
+//
+//  Created by Sayan on 25.05.2025.
+//
     
 import Collections
 import RealityKit

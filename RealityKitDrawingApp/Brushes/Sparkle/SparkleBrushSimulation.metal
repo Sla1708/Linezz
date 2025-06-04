@@ -1,5 +1,8 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+ 
+Linezz
+
+Created by Sayan on 28.05.2025.
 
 Abstract:
 A compute kernel written in Metal Shading Language to simulate the particles in a Sparkle brush stroke, 

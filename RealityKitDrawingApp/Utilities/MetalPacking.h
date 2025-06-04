@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Utility types to bridge packed Metal types (`packed_float3`, `packed_float2`, `packed_half3`)
-  from Metal Shading Language to Swift.
-*/
+//
+//  MetalPacking.h
+//  Linezz
+//
+//  Created by Sayan on 13.05.2025.
+//
 
 #pragma once
 

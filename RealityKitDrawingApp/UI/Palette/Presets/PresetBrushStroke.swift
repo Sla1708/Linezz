@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Describes a path for a mesh to be drawn for the `PresetBrushView`.
-*/
+//
+//  PresetBrushStroke.swift
+//  Linezz
+//
+//  Created by Sayan on 15.05.2025.
+//
 
 struct PresetBrushStroke {
     static let samples: [SIMD3<Float>] = {

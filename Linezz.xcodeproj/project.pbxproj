@@ -152,6 +152,7 @@
 				3A7B00532BCB51A50068302D /* CurveProcessing.swift */,
 				3A0BFF742BE22A1E00BF194C /* MetalUtilities.swift */,
 				3ADB78A12AB3026E000BD147 /* MathUtilities.swift */,
+				3A7686E22AB263DA00762DDF /* RealityKitDrawingApp.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -220,7 +221,6 @@
 				119759532BC8BE74006329D8 /* UI */,
 				3A8A1A412BCCE54D0007F33F /* Brushes */,
 				3A0BFF732BE22A0100BF194C /* Utilities */,
-				3A7686E22AB263DA00762DDF /* RealityKitDrawingApp.swift */,
 				3ADB78A42AB3A8BB000BD147 /* RealityKitDrawingApp_BridgingHeader.h */,
 				3A7686E62AB263DC00762DDF /* Assets.xcassets */,
 				3A7686E82AB263DC00762DDF /* Preview Content */,

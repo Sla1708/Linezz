@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A collection of algorithms to generate smooth curves.
-  Techniques include cubic Hermite curves as well as Catmull-Rom curves.
-*/
+//
+//  CurveProcessing.swift
+//  Linezz
+//
+//  Created by Sayan on 17.05.2025.
+//
 
 // MARK: HermiteInterpolant
 

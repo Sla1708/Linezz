@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view that encapsulates the palette functionality, including settings and preset selectors.
-*/
+//
+//  PaletteView.swift
+//  Linezz
+//
+//  Created by Sayan on 16.05.2025.
+//
 
 import SwiftUI
 import RealityKit

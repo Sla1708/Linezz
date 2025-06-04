@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Utilities for interfacing with Metal.
-*/
+//
+//  MetalUtilities.swift
+//  Linezz
+//
+//  Created by Sayan on 14.05.2025.
+//
 
 import Metal
 

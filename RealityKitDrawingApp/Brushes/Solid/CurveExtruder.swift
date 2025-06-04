@@ -1,11 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Structure to perform an extrude operation on a 2D shape, along a 3D curve.
-  The geometry is generated as a RealityKit `LowLevelMesh` for low latency
-  and control over buffer layouts.
-*/
+//
+//  CurveExtruder.swift
+//  Linezz
+//
+//  Created by Sayan on 26.05.2025.
+//
 
 import RealityKit
 import Foundation

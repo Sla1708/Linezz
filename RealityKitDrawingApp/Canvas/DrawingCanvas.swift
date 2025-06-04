@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Contains the logic that represents the bounded canvas space.
-*/
-
+//
+//  DrawingCanvas.swift
+//  Linezz
+//
+//  Created by Sayan on 18.05.2025.
+//
 import RealityKit
 
 /// The app state which controls the size and placement of the person's drawing canvas.

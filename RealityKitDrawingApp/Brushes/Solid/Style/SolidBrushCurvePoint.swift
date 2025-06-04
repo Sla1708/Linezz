@@ -1,10 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A styled point to be passed to the `SmoothCurveSampler`.
-  A list of these defines the curve of a solid brush stroke.
-*/
+//
+//  SolidBrushCurvePoint.swift
+//  Linezz
+//
+//  Created by Sayan on 18.05.2025.
+//
 
 import CoreGraphics
 

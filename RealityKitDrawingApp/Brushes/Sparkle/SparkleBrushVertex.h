@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Vertex data for the sparkle brush style, written in Metal Shading Language.
-*/
+//
+//  SparkleBrushVertex.h
+//  Linezz
+//
+//  Created by Sayan on 28.05.2025.
+//
 
 #pragma once
 

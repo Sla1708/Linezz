@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-Facilitates the use of RealityKit `AnchorEntities` to understand someone's input state.
-*/
+//
+//  AnchorEntityInputProvider.swift
+//  Linezz
+//
+//  Created by Sayan on 25.05.2025.
+//
 
 import RealityKit
 import Foundation

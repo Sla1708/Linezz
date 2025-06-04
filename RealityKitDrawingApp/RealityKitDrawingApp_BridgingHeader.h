@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A bridging header to allow structures defined in C or Metal Shading Language to be accessible in Swift.
-*/
+//
+//  RealityKitDrawingApp_BridgingHeader.h
+//  Linezz
+//
+//  Created by Sayan on 13.05.2025.
+//
 
 #pragma once
 

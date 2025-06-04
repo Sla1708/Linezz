@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view which displays a ring-shaped visualization of the drawing canvas in your immersive space.
-*/
+//
+//  DrawingCanvasVisualizationView.swift
+//  Linezz
+//
+//  Created by Sayan on 18.05.2025.
+//
 
 import RealityKit
 import SwiftUI
