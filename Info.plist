@@ -5,7 +5,7 @@
 	<key>NSHandsTrackingUsageDescription</key>
 	<string>Linezz needs hand tracking to detect where you draw.</string>
 	<key>NSWorldSensingUsageDescription</key>
-	<string>Linezz needs floor plane tracking to detect where to place the drawing canvas.</string>
+	<string>Linezz needs floor plane tracking to detect where to place the drawing zone.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationPreferredDefaultSceneSessionRole</key>
