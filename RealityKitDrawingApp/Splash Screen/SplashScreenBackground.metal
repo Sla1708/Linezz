@@ -1,5 +1,7 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
+Linezz
+
+Created by Sayan on 02.06.2025.
 
 Abstract:
 A compute kernel written in Metal Shading Language which is displayed on the splash screen when launching the app.

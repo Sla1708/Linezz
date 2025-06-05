@@ -1,9 +1,9 @@
-/*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view to display a splash screen when launching the app. Expected to be placed in a window.
-*/
+//
+//  SplashScreenView.swift
+//  Linezz
+//
+//  Created by Sayan on 01.06.2025.
+//
 
 import RealityKit
 import SwiftUI

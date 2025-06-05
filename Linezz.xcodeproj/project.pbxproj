@@ -599,7 +599,7 @@
 				INFOPLIST_FILE = RealityKitDrawingApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Linezz;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sayan.lakhoua.Linezz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sayan.lakhoua.linezz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
@@ -628,7 +628,7 @@
 				INFOPLIST_FILE = RealityKitDrawingApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Linezz;
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sayan.lakhoua.Linezz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sayan.lakhoua.linezz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
