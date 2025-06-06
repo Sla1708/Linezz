@@ -60,3 +60,8 @@ This project ("Linezz") is licensed under a specific license. See the [LICENSE](
 
 **Please Note:**
 This app is also part of the Neigboorhood SF program.
+
+## TestFlight Beta Version of Linezz
+The first version of Linezz is available on TestFlight. You can download it from the link below. Please note that this is a beta version and may contain bugs.
+
+https://testflight.apple.com/join/kySerM4D
