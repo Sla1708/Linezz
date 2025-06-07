@@ -10,7 +10,7 @@ incorporates specific source files and snippets supplied by Apple Inc.
 (collectively, the “Sample Code”).
 The Sample Code is redistributed here exactly as provided by Apple Inc. and
 remains subject to Apple’s license reproduced below.
-All other portions of the Software are © 2025 Sayan Lakhoua and are offered under the *same* license terms so the entire codebase can be handled uniformly.
+All other portions of the Software are © 2025 Sayan Lakhoua and are offered under the *same* license terms so the entire project can be handled uniformly.
 
 
 APPLE LICENSE
