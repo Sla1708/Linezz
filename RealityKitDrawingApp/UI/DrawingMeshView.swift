@@ -52,4 +52,3 @@ struct DrawingMeshView: View {
         }
     }
 }
-
