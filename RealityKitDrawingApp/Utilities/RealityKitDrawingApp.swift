@@ -88,7 +88,7 @@ struct RealityKitDrawingApp: App {
             
             WindowGroup(id: Self.paletteWindowId) {
                 PaletteView(brushState: $brushState)
-                    .frame(width: 400, height: 550, alignment: .top)
+                    .frame(width: 450, height: 690, alignment: .top)
                     .fixedSize(horizontal: true, vertical: false)
             }
             .windowResizability(.contentSize)
