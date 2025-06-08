@@ -7,13 +7,13 @@
 
 import SwiftUI
 import RealityKit
+import Foundation   // for NotificationCenter
 
 struct DrawingMeshView: View {
     let canvas: DrawingCanvasSettings
     @Binding var brushState: BrushState
 
     @State private var anchorEntityInput: AnchorEntityInputProvider?
-    @State private var isPaused: Bool = false
 
     private let rootEntity  = Entity()
     private let inputEntity = Entity()
@@ -28,6 +28,7 @@ struct DrawingMeshView: View {
             rootEntity.position = .zero
             content.add(rootEntity)
 
+            // Initialize the DrawingDocument and input provider
             let drawingDocument = await DrawingDocument(
                 rootEntity: rootEntity,
                 brushState: brushState,
@@ -39,33 +40,36 @@ struct DrawingMeshView: View {
                 document: drawingDocument
             )
         }
-        // Pause drawing input when UI button is pressed
-        .onReceive(NotificationCenter.default.publisher(for: .pauseDrawing)) { _ in
-            isPaused = true
-        }
-        .onReceive(NotificationCenter.default.publisher(for: .resumeDrawing)) { _ in
-            isPaused = false
-        }
+        // Undo
         .onReceive(NotificationCenter.default.publisher(for: .undoStroke)) { _ in
-            guard !isPaused else { return }
             Task {
-                try? await Task.sleep(nanoseconds: 100_000_000) // 100ms delay
+                try? await Task.sleep(nanoseconds: 100_000_000)
                 await anchorEntityInput?.document.undoLastStroke()
             }
         }
+        // Redo
         .onReceive(NotificationCenter.default.publisher(for: .restoreStroke)) { _ in
-            guard !isPaused else { return }
             Task {
                 try? await Task.sleep(nanoseconds: 100_000_000)
                 await anchorEntityInput?.document.redoLastStroke()
             }
         }
+        // Clear
         .onReceive(NotificationCenter.default.publisher(for: .clearCanvas)) { _ in
-            guard !isPaused else { return }
             Task {
                 try? await Task.sleep(nanoseconds: 100_000_000)
                 await anchorEntityInput?.document.clearAllStrokes()
             }
         }
+    }
+}
+
+struct DrawingMeshView_Previews: PreviewProvider {
+    @State static var brushState = BrushState()
+    static var previews: some View {
+        DrawingMeshView(
+            canvas: DrawingCanvasSettings(),
+            brushState: $brushState
+        )
     }
 }

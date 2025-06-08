@@ -8,14 +8,13 @@
 import SwiftUI
 import RealityKit
 import RealityKitContent
-import Foundation   // for NotificationCenter
+import Foundation
 
 struct PaletteView: View {
     @Binding var brushState: BrushState
 
-    /// Temporarily track when a UI button is being pressed
+    // Track when a UI button is being pressed
     @State private var isClickingButton: Bool = false
-    @State private var isSettingsPopoverPresented: Bool = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -84,11 +83,22 @@ struct PaletteView: View {
                 .tint(.red)
             }
             .padding(.horizontal, 20)
-            // Broadcast pause/resume when interacting with UI
+            // Pause/resume drawing input around button-taps
             .onChange(of: isClickingButton) { clicking in
-                NotificationCenter.default.post(name: clicking ? .pauseDrawing : .resumeDrawing, object: nil)
+                NotificationCenter.default.post(
+                    name: clicking ? .pauseDrawing : .resumeDrawing,
+                    object: nil
+                )
             }
         }
         .padding(.vertical, 20)
+    }
+}
+
+struct PaletteView_Previews: PreviewProvider {
+    @State static var brushState = BrushState()
+    static var previews: some View {
+        PaletteView(brushState: $brushState)
+            .frame(width: 450, height: 690, alignment: .top)
     }
 }
