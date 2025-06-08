@@ -51,6 +51,7 @@
 		3AECFF302C006F1B00176926 /* DrawingCanvasConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECFF2F2C006F1700176926 /* DrawingCanvasConfigurationView.swift */; };
 		3AECFF322C006F5C00176926 /* DrawingCanvasPlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECFF312C006F5100176926 /* DrawingCanvasPlacementView.swift */; };
 		3AECFF342C00709600176926 /* DrawingCanvasVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECFF332C00709100176926 /* DrawingCanvasVisualizationView.swift */; };
+		A2510B0F2DF59BF900A44732 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2510B0E2DF59BF900A44732 /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		3AFFD30E2BF176F000935A95 /* DistanceFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistanceFunctions.h; sourceTree = "<group>"; };
 		5CBA090E1E44C6C2095B2B2A /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		8A319A4AB7527C79477470F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A2510B0E2DF59BF900A44732 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		A25FB3B62DE7861A00DFDF7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6D6D139AF68682151B497F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				3A4AEF822BDDC33C005534FE /* Presets */,
 				3A4AEF7D2BDDC2CC005534FE /* BrushTypeView.swift */,
 				119759542BC8BE7C006329D8 /* PaletteView.swift */,
+				A2510B0E2DF59BF900A44732 /* Notifications.swift */,
 			);
 			path = Palette;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2510B0F2DF59BF900A44732 /* Notifications.swift in Sources */,
 				3A0BFF772BE22AEA00BF194C /* SplashScreenView.swift in Sources */,
 				3A9A17EA2BD23F4F00FEF07D /* PresetBrushStroke.swift in Sources */,
 				3A1CC9862AF3AB1C00114585 /* SmoothCurveSampler.swift in Sources */,

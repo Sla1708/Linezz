@@ -2,8 +2,18 @@
 //  Notifications.swift
 //  Linezz
 //
-//  Created by Sayan on 08.06.2025.
-//  Copyright © 2025 Apple. All rights reserved.
+//  Created by Sayan on 07.06.2025.
 //
 
 import Foundation
+
+extension Notification.Name {
+    // Undo last stroke
+    static let undoStroke = Notification.Name("undoStroke")
+    
+    // Restore the last undone stroke
+    static let restoreStroke = Notification.Name("restoreStroke")
+    
+    // Clear all the strokes
+    static let clearCanvas = Notification.Name("clearCanvas")
+}
