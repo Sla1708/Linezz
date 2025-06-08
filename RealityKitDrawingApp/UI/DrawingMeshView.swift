@@ -42,11 +42,14 @@ struct DrawingMeshView: View {
             )
         }
         .onReceive(NotificationCenter.default.publisher(for: .undoStroke)) { _ in
-            Task {
-                await anchorEntityInput?.document.clearAllStrokes()
-            }
+            Task { await anchorEntityInput?.document.undoLastStroke() }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .restoreStroke)) { _ in
+            Task { await anchorEntityInput?.document.redoLastStroke() }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .clearCanvas)) { _ in
+            Task { await anchorEntityInput?.document.clearAllStrokes() }
         }
     }
 }
-
 
