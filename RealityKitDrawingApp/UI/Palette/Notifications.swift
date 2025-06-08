@@ -16,4 +16,10 @@ extension Notification.Name {
     
     // Clear all the strokes
     static let clearCanvas = Notification.Name("clearCanvas")
+    
+    // Pause drawing input (e.g. while tapping Palette buttons)
+    static let pauseDrawing = Notification.Name("pauseDrawing")
+    
+    // Resume drawing input
+    static let resumeDrawing = Notification.Name("resumeDrawing")
 }

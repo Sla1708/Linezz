@@ -5,17 +5,15 @@
 //  Created by Sayan on 15.05.2025.
 //
 
-import Foundation
 import SwiftUI
-import Combine
 import RealityKit
-import RealityKitContent
 
 struct DrawingMeshView: View {
     let canvas: DrawingCanvasSettings
     @Binding var brushState: BrushState
 
     @State private var anchorEntityInput: AnchorEntityInputProvider?
+    @State private var isPaused: Bool = false
 
     private let rootEntity  = Entity()
     private let inputEntity = Entity()
@@ -41,14 +39,33 @@ struct DrawingMeshView: View {
                 document: drawingDocument
             )
         }
+        // Pause drawing input when UI button is pressed
+        .onReceive(NotificationCenter.default.publisher(for: .pauseDrawing)) { _ in
+            isPaused = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .resumeDrawing)) { _ in
+            isPaused = false
+        }
         .onReceive(NotificationCenter.default.publisher(for: .undoStroke)) { _ in
-            Task { await anchorEntityInput?.document.undoLastStroke() }
+            guard !isPaused else { return }
+            Task {
+                try? await Task.sleep(nanoseconds: 100_000_000) // 100ms delay
+                await anchorEntityInput?.document.undoLastStroke()
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: .restoreStroke)) { _ in
-            Task { await anchorEntityInput?.document.redoLastStroke() }
+            guard !isPaused else { return }
+            Task {
+                try? await Task.sleep(nanoseconds: 100_000_000)
+                await anchorEntityInput?.document.redoLastStroke()
+            }
         }
         .onReceive(NotificationCenter.default.publisher(for: .clearCanvas)) { _ in
-            Task { await anchorEntityInput?.document.clearAllStrokes() }
+            guard !isPaused else { return }
+            Task {
+                try? await Task.sleep(nanoseconds: 100_000_000)
+                await anchorEntityInput?.document.clearAllStrokes()
+            }
         }
     }
 }

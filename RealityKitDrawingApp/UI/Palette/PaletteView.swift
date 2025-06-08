@@ -13,7 +13,8 @@ import Foundation   // for NotificationCenter
 struct PaletteView: View {
     @Binding var brushState: BrushState
 
-    @State private var isDrawing: Bool = false
+    /// Temporarily track when a UI button is being pressed
+    @State private var isClickingButton: Bool = false
     @State private var isSettingsPopoverPresented: Bool = false
 
     var body: some View {
@@ -43,7 +44,11 @@ struct PaletteView: View {
             HStack(spacing: 5) {
                 // Undo
                 Button {
-                    NotificationCenter.default.post(name: .undoStroke, object: nil)
+                    isClickingButton = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        NotificationCenter.default.post(name: .undoStroke, object: nil)
+                        isClickingButton = false
+                    }
                 } label: {
                     Label("Undo", systemImage: "arrow.uturn.left")
                 }
@@ -52,7 +57,11 @@ struct PaletteView: View {
 
                 // Redo
                 Button {
-                    NotificationCenter.default.post(name: .restoreStroke, object: nil)
+                    isClickingButton = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        NotificationCenter.default.post(name: .restoreStroke, object: nil)
+                        isClickingButton = false
+                    }
                 } label: {
                     Label("Redo", systemImage: "arrow.uturn.right")
                 }
@@ -61,7 +70,11 @@ struct PaletteView: View {
 
                 // Clear (wide)
                 Button {
-                    NotificationCenter.default.post(name: .clearCanvas, object: nil)
+                    isClickingButton = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        NotificationCenter.default.post(name: .clearCanvas, object: nil)
+                        isClickingButton = false
+                    }
                 } label: {
                     Label("Clear", systemImage: "trash")
                         .frame(maxWidth: .infinity)
@@ -71,16 +84,11 @@ struct PaletteView: View {
                 .tint(.red)
             }
             .padding(.horizontal, 20)
+            // Broadcast pause/resume when interacting with UI
+            .onChange(of: isClickingButton) { clicking in
+                NotificationCenter.default.post(name: clicking ? .pauseDrawing : .resumeDrawing, object: nil)
+            }
         }
         .padding(.vertical, 20)
     }
 }
-
-struct PaletteView_Previews: PreviewProvider {
-    @State static var brushState = BrushState()
-
-    static var previews: some View {
-        PaletteView(brushState: $brushState)
-    }
-}
-
