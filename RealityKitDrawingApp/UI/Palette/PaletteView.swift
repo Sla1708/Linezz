@@ -62,7 +62,7 @@ struct PaletteView: View {
                         isClickingButton = false
                     }
                 } label: {
-                    Label("Redo", systemImage: "arrow.uturn.right")
+                    Label("Restore", systemImage: "arrow.uturn.right")
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.small)
