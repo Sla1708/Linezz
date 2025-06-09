@@ -7,7 +7,7 @@
 
 import SwiftUI
 import RealityKit
-import Foundation   // for NotificationCenter
+import Foundation
 
 struct DrawingMeshView: View {
     let canvas: DrawingCanvasSettings
