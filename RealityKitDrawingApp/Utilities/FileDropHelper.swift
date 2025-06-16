@@ -1,13 +1,4 @@
 //
-//  to.swift
-//  Linezz
-//
-//  Created by Sayan on 16.06.2025.
-//  Copyright © 2025 Apple. All rights reserved.
-//
-
-
-//
 //  FileDropHelper.swift
 //  Linezz
 //
@@ -123,16 +114,22 @@ class FileDropHelper {
         }
     }
 
-    /// Adds the necessary components to an entity to make it interactive.
+    /// Adds the necessary components to an entity to make it interactive and lockable.
     private static func addManipulationComponents(to entity: ModelEntity) {
         // Generate collision shapes for gesture targeting.
         entity.generateCollisionShapes(recursive: true)
         entity.components.set(InputTargetComponent())
         entity.components.set(HoverEffectComponent())
+        
+        // Add the custom component for locking behavior.
+        entity.components.set(LockableComponent())
+        
+        // Add the custom component for two-handed move behavior.
+        entity.components.set(TwoHandMoveableComponent())
     }
 }
 
-// Add a specific UTType for USDZ files.
+/// Add a specific UTType for USDZ files.
 extension UTType {
     public static var usdz: UTType { UTType(filenameExtension: "usdz")! }
 }

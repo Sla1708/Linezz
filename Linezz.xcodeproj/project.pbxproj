@@ -52,6 +52,10 @@
 		3AECFF322C006F5C00176926 /* DrawingCanvasPlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECFF312C006F5100176926 /* DrawingCanvasPlacementView.swift */; };
 		3AECFF342C00709600176926 /* DrawingCanvasVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECFF332C00709100176926 /* DrawingCanvasVisualizationView.swift */; };
 		A2510B0F2DF59BF900A44732 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2510B0E2DF59BF900A44732 /* Notifications.swift */; };
+		A258A80B2E004CE8008F86F9 /* FileDropHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258A80A2E004CE8008F86F9 /* FileDropHelper.swift */; };
+		A258A80D2E005536008F86F9 /* LockableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258A80C2E005536008F86F9 /* LockableComponent.swift */; };
+		A258A80F2E0071E6008F86F9 /* TwoHandMoveableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258A80E2E0071E6008F86F9 /* TwoHandMoveableComponent.swift */; };
+		A258A8112E0071F8008F86F9 /* TwoHandManipulationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258A8102E0071F8008F86F9 /* TwoHandManipulationSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +110,10 @@
 		5CBA090E1E44C6C2095B2B2A /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		8A319A4AB7527C79477470F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A2510B0E2DF59BF900A44732 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		A258A80A2E004CE8008F86F9 /* FileDropHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropHelper.swift; sourceTree = "<group>"; };
+		A258A80C2E005536008F86F9 /* LockableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockableComponent.swift; sourceTree = "<group>"; };
+		A258A80E2E0071E6008F86F9 /* TwoHandMoveableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoHandMoveableComponent.swift; sourceTree = "<group>"; };
+		A258A8102E0071F8008F86F9 /* TwoHandManipulationSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoHandManipulationSystem.swift; sourceTree = "<group>"; };
 		A25FB3B62DE7861A00DFDF7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6D6D139AF68682151B497F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +163,10 @@
 				3A0BFF742BE22A1E00BF194C /* MetalUtilities.swift */,
 				3ADB78A12AB3026E000BD147 /* MathUtilities.swift */,
 				3A7686E22AB263DA00762DDF /* RealityKitDrawingApp.swift */,
+				A258A80E2E0071E6008F86F9 /* TwoHandMoveableComponent.swift */,
+				A258A8102E0071F8008F86F9 /* TwoHandManipulationSystem.swift */,
+				A258A80A2E004CE8008F86F9 /* FileDropHelper.swift */,
+				A258A80C2E005536008F86F9 /* LockableComponent.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -370,7 +382,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1630;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					3A7686DA2AB263DA00762DDF = {
@@ -423,6 +435,7 @@
 				3A9A17EA2BD23F4F00FEF07D /* PresetBrushStroke.swift in Sources */,
 				3A1CC9862AF3AB1C00114585 /* SmoothCurveSampler.swift in Sources */,
 				3ADB78A22AB3026E000BD147 /* MathUtilities.swift in Sources */,
+				A258A8112E0071F8008F86F9 /* TwoHandManipulationSystem.swift in Sources */,
 				3ADB78A02AB2ECCF000BD147 /* DrawingMeshView.swift in Sources */,
 				3AB6DB4F2BF3F38300DE837B /* SparkleDrawingMeshGenerator+LowLevelMesh.swift in Sources */,
 				3A58467B2AD3631D00EB71C4 /* CurveExtruderWithEndcaps.swift in Sources */,
@@ -443,11 +456,13 @@
 				119759572BC8C36D006329D8 /* BrushState.swift in Sources */,
 				3AB6DB4D2BF3D2AC00DE837B /* SparkleDrawingMeshGenerator+Simulation.swift in Sources */,
 				3A357C942BF1C6F30067B0CB /* SparkleBrushComponent.swift in Sources */,
+				A258A80F2E0071E6008F86F9 /* TwoHandMoveableComponent.swift in Sources */,
 				3AECFF302C006F1B00176926 /* DrawingCanvasConfigurationView.swift in Sources */,
 				3A7B00552BCB51A50068302D /* CurveProcessing.swift in Sources */,
 				3A0BFF762BE22A1E00BF194C /* MetalUtilities.swift in Sources */,
 				119759552BC8BFAF006329D8 /* PaletteView.swift in Sources */,
 				3AECFF342C00709600176926 /* DrawingCanvasVisualizationView.swift in Sources */,
+				A258A80D2E005536008F86F9 /* LockableComponent.swift in Sources */,
 				3A5846792AD362E900EB71C4 /* CurveExtruder.swift in Sources */,
 				3A5BF7452BE6F3C6000A6CA1 /* DrawingCanvas.swift in Sources */,
 				3AB4781E2BFA755100C5E9C4 /* SparkleBrushCurvePoint.swift in Sources */,
@@ -456,6 +471,7 @@
 				3AECFF2A2C004C4000176926 /* SplashScreenBackgroundComponent.swift in Sources */,
 				3AB8C7652BE04AD500D7EF6A /* SparkleDrawingMeshGenerator.swift in Sources */,
 				3AECFF2E2C004CAF00176926 /* SplashScreenForeground.swift in Sources */,
+				A258A80B2E004CE8008F86F9 /* FileDropHelper.swift in Sources */,
 				3A5192C62C003C9F00EF1D14 /* SolidBrushVertex+LowLevelMesh.swift in Sources */,
 				3A71E0B32BCD09C2002F38AC /* SolidBrushStyleProvider.swift in Sources */,
 			);
@@ -523,6 +539,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = xros;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RealityKitDrawingApp/RealityKitDrawingApp_BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -581,6 +598,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = xros;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RealityKitDrawingApp/RealityKitDrawingApp_BridgingHeader.h";
 				VALIDATE_PRODUCT = YES;

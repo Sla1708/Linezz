@@ -22,11 +22,15 @@ extension Notification.Name {
     
     // Resume drawing input
     static let resumeDrawing = Notification.Name("resumeDrawing")
-    
-    // New: Add an image into the drawing zone
-    static let addImage = Notification.Name("addImage")
-    
-    // New: Add a file into the drawing zone
-    static let addFile = Notification.Name("addFile")
-}
 
+    // MARK: - New Notifications for File Handling
+    
+    /// Notification to trigger the presentation of the photo picker.
+    static let presentPhotoPicker = Notification.Name("presentPhotoPicker")
+    
+    /// Notification to trigger the presentation of the file importer.
+    static let presentFileImporter = Notification.Name("presentFileImporter")
+    
+    /// Notification to show an error alert with a message.
+    static let showErrorAlert = Notification.Name("showErrorAlert")
+}

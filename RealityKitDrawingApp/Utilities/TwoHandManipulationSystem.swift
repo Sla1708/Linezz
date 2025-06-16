@@ -20,7 +20,7 @@ struct TwoHandManipulationSystem: System {
     init(scene: RealityKit.Scene) {}
     
     func update(context: SceneUpdateContext) {
-        // 1. Get up-to-date hand tracking data. We need both hands to proceed.
+        // 1. Get up-to-date hand tracking data.
         let hands = context.entities(matching: Self.handQuery, updatingSystemWhen: .rendering)
         guard let leftHand = hands.first(where: { $0.components[HandComponent.self]?.chirality == .left }),
               let rightHand = hands.first(where: { $0.components[HandComponent.self]?.chirality == .right }) else {
@@ -30,47 +30,57 @@ struct TwoHandManipulationSystem: System {
         let leftHandComp = leftHand.components[HandComponent.self]!
         let rightHandComp = rightHand.components[HandComponent.self]!
         
+        // It can take a moment for hand tracking to initialize.
+        // Ensure the anchor positions are valid (not zero) before proceeding.
+        guard leftHandComp.indexFingerTip.position != .zero, rightHandComp.indexFingerTip.position != .zero else {
+            return
+        }
+        
         // 2. Determine the gesture state based on hand pinching.
-        // A "pinch" is defined as the index finger and thumb being very close.
+        // Get all hand anchor positions in world space for consistency.
+        let leftIndexPos = leftHandComp.indexFingerTip.position(relativeTo: nil)
+        let leftThumbPos = leftHandComp.thumbTip.position(relativeTo: nil)
+        let rightIndexPos = rightHandComp.indexFingerTip.position(relativeTo: nil)
+        let rightThumbPos = rightHandComp.thumbTip.position(relativeTo: nil)
+
         let pinchThreshold: Float = 0.03 // 3cm
-        let isLeftPinched = distance(leftHandComp.indexFingerTip.position, leftHandComp.thumbTip.position) < pinchThreshold
-        let isRightPinched = distance(rightHandComp.indexFingerTip.position, rightHandComp.thumbTip.position) < pinchThreshold
+        let isLeftPinched = distance(leftIndexPos, leftThumbPos) < pinchThreshold
+        let isRightPinched = distance(rightIndexPos, rightThumbPos) < pinchThreshold
         
         let isGrabbingNow = isLeftPinched && isRightPinched
         
-        // The center point between the user's hands.
-        let handsMidpoint = (leftHandComp.indexFingerTip.position + rightHandComp.indexFingerTip.position) / 2
+        // The center point between the user's hands, in world space.
+        let handsMidpoint = (leftIndexPos + rightIndexPos) / 2
         
         // 3. Iterate through all moveable entities and update their state.
         for entity in context.entities(matching: Self.moveableQuery, updatingSystemWhen: .rendering) {
             
-            // The entity must have our custom components and must not be locked.
             guard var moveable = entity.components[TwoHandMoveableComponent.self],
                   let lockable = entity.components[LockableComponent.self],
                   !lockable.isLocked else { continue }
             
+            // --- FIX: Get the entity's position in WORLD space for all calculations. ---
+            let entityWorldPosition = entity.position(relativeTo: nil)
+            
             if !moveable.isGrabbed && isGrabbingNow {
-                // --- Condition to INITIATE a grab ---
-                // The user is pinching with both hands, and the object isn't already grabbed.
-                // Check if the hands are close enough to the object to grab it.
+                // --- INITIATE grab ---
                 let grabDistanceThreshold: Float = 0.4 // Grab from up to 40cm away
-                if distance(handsMidpoint, entity.position) < grabDistanceThreshold {
+                if distance(handsMidpoint, entityWorldPosition) < grabDistanceThreshold {
                     moveable.isGrabbed = true
-                    moveable.initialGrabOffset = entity.position - handsMidpoint
+                    // --- FIX: Calculate offset in WORLD space. ---
+                    moveable.initialGrabOffset = entityWorldPosition - handsMidpoint
                 }
                 
             } else if moveable.isGrabbed && isGrabbingNow {
-                // --- Condition to CONTINUE a grab ---
-                // The user continues to pinch, so we move the object.
+                // --- CONTINUE grab ---
                 if let offset = moveable.initialGrabOffset {
-                    let newPosition = handsMidpoint + offset
-                    // Smoothly move the entity to its new position.
-                    entity.move(to: Transform(translation: newPosition), relativeTo: nil, duration: 0.05)
+                    let newWorldPosition = handsMidpoint + offset
+                    // The move function with `relativeTo: nil` correctly handles setting the world position.
+                    entity.move(to: Transform(translation: newWorldPosition), relativeTo: nil, duration: 0.05)
                 }
                 
             } else if moveable.isGrabbed && !isGrabbingNow {
-                // --- Condition to RELEASE a grab ---
-                // The user has stopped pinching, so release the object.
+                // --- RELEASE grab ---
                 moveable.isGrabbed = false
                 moveable.initialGrabOffset = nil
             }
