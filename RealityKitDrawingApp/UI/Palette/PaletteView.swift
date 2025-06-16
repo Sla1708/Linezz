@@ -9,12 +9,20 @@ import SwiftUI
 import RealityKit
 import RealityKitContent
 import Foundation
+import PhotosUI
+import UniformTypeIdentifiers
 
 struct PaletteView: View {
     @Binding var brushState: BrushState
 
     // Track when a UI button is being pressed
     @State private var isClickingButton: Bool = false
+
+    // MARK: – New state for image + file pickers
+    @State private var showingImagePicker: Bool = false
+    @State private var selectedPhotoItem: PhotosPickerItem?
+    @State private var showingFileImporter: Bool = false
+    @State private var selectedFileURL: URL?
 
     var body: some View {
         VStack(spacing: 24) {
@@ -90,8 +98,58 @@ struct PaletteView: View {
                     object: nil
                 )
             }
+
+            // MARK: – New row: Add Image / Add File
+            HStack(spacing: 5) {
+                Button {
+                    showingImagePicker = true
+                } label: {
+                    Label("Add Image", systemImage: "photo.on.rectangle")
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+
+                Button {
+                    showingFileImporter = true
+                } label: {
+                    Label("Add File", systemImage: "doc.on.doc")
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+            }
+            .padding(.horizontal, 20)
         }
         .padding(.vertical, 20)
+        // MARK: – Image picker sheet
+        .photosPicker(
+            isPresented: $showingImagePicker,
+            selection: $selectedPhotoItem,
+            matching: .images,
+            photoLibrary: .shared()
+        )
+        .onChange(of: selectedPhotoItem) { newItem in
+            Task {
+                if let data = try? await newItem?.loadTransferable(type: Data.self),
+                   let uiImage = UIImage(data: data) {
+                    NotificationCenter.default.post(name: .addImage, object: uiImage)
+                }
+            }
+        }
+        // MARK: – File importer sheet
+        .fileImporter(
+            isPresented: $showingFileImporter,
+            allowedContentTypes: [.item],
+            allowsMultipleSelection: false
+        ) { result in
+            switch result {
+            case .success(let urls):
+                if let url = urls.first {
+                    NotificationCenter.default.post(name: .addFile, object: url)
+                }
+            case .failure(let error):
+                print("File import failed: \(error)")
+            }
+        }
     }
 }
 
