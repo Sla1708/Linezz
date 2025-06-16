@@ -22,4 +22,11 @@ extension Notification.Name {
     
     // Resume drawing input
     static let resumeDrawing = Notification.Name("resumeDrawing")
+    
+    // New: Add an image into the drawing zone
+    static let addImage = Notification.Name("addImage")
+    
+    // New: Add a file into the drawing zone
+    static let addFile = Notification.Name("addFile")
 }
+
