@@ -190,3 +190,4 @@ struct SplashScreenForegroundView: View {
         .frame(depth: 0)
     }
 }
+

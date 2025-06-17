@@ -32,3 +32,4 @@ class DrawingCanvasSettings {
         return length(localPos2) < radius
     }
 }
+

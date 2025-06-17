@@ -115,3 +115,4 @@ struct DrawingCanvasConfigurationView: View {
         .frame(width: 300, height: 300)
     }
 }
+
