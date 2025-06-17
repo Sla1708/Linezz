@@ -161,3 +161,4 @@ struct BrushTypeView: View {
         }
     }
 }
+

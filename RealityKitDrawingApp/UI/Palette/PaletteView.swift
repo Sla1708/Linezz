@@ -39,29 +39,6 @@ struct PaletteView: View {
                 .frame(minHeight: 125)
                 .padding(.horizontal, 2)
 
-            // MARK: - New File/Image Buttons
-
-            HStack(spacing: 15) {
-                Button {
-                    NotificationCenter.default.post(name: .presentPhotoPicker, object: nil)
-                } label: {
-                    Label("Add Image", systemImage: "photo")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.bordered)
-                .controlSize(.small)
-
-                Button {
-                    NotificationCenter.default.post(name: .presentFileImporter, object: nil)
-                } label: {
-                    Label("Add File", systemImage: "doc.badge.plus")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.bordered)
-                .controlSize(.small)
-            }
-            .padding(.horizontal, 20)
-
             // Action buttons (Undo, Redo, Clear)
             HStack(spacing: 5) {
                 // Undo
@@ -125,3 +102,4 @@ struct PaletteView_Previews: PreviewProvider {
             .frame(width: 450, height: 690, alignment: .top)
     }
 }
+
