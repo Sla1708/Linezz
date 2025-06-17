@@ -54,3 +54,4 @@ struct SplashScreenBackgroundView: View {
         .frame(minHeight: 300)
     }
 }
+
