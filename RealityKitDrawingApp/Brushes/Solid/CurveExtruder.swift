@@ -265,3 +265,4 @@ struct CurveExtruder {
         cachedSampleCount = samples.count
     }
 }
+

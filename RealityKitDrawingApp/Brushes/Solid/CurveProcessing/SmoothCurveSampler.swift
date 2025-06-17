@@ -169,3 +169,4 @@ public struct SmoothCurveSampler {
         curve.beginNewStroke()
     }
 }
+

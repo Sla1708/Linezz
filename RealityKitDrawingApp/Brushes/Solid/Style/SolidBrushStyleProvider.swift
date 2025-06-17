@@ -56,3 +56,4 @@ struct SolidBrushStyleProvider {
                              metallic: settings.metallic)
     }
 }
+

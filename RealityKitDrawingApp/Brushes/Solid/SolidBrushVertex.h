@@ -23,3 +23,4 @@ struct SolidBrushVertex {
 #pragma pack(pop)
 
 static_assert(sizeof(struct SolidBrushVertex) == 56, "ensure packing");
+

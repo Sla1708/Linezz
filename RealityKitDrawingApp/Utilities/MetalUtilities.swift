@@ -33,3 +33,4 @@ extension SIMD3 where Scalar == Float16 {
     /// Convert a `SIMD3<Float16>` to a `packed_half3`.
     var packed3: packed_half3 { return .init(x: x, y: y, z: z) }
 }
+

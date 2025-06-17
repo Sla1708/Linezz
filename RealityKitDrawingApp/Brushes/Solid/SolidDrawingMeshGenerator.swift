@@ -41,3 +41,4 @@ final class SolidDrawingMeshGenerator {
         extruder.beginNewStroke()
     }
 }
+

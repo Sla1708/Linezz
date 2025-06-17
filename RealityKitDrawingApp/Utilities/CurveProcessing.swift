@@ -256,3 +256,4 @@ func subdivideCatmullRomSpline<T: HermiteInterpolant, S: RandomAccessCollection<
     
     return subdivision.sorted()
 }
+

@@ -17,3 +17,4 @@ typedef simd_float2 packed_float2;
 typedef struct { _Float16 x, y, z; } packed_half3;
 
 #endif // __METAL_VERSION__
+

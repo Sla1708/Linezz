@@ -54,3 +54,4 @@ func mix(
                          roughness: mix(point0.roughness, point1.roughness, t: blend),
                          metallic: mix(point0.metallic, point1.metallic, t: blend))
 }
+
