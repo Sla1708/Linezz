@@ -22,3 +22,4 @@ struct SparkleBrushStyleProvider {
                                       color: settings.color)
     }
 }
+

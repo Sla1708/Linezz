@@ -103,3 +103,4 @@ extension SparkleDrawingMeshGenerator {
         output.parts[0].indexCount = particleCount * 6
     }
 }
+

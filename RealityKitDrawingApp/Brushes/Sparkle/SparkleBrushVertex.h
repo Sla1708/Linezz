@@ -41,3 +41,4 @@ static_assert(sizeof(struct SparkleBrushAttributes) == 28, "ensure packing");
 static_assert(sizeof(struct SparkleBrushParticle) == 40, "ensure packing");
 static_assert(sizeof(struct SparkleBrushVertex) == 32, "ensure packing");
 static_assert(sizeof(struct SparkleBrushSimulationParams) == 12, "ensure packing");
+

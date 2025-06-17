@@ -235,3 +235,4 @@ final class SparkleDrawingMeshGenerator {
                           particleCount: particleCount, commandBuffer: commandBuffer, encoder: computeEncoder)
     }
 }
+

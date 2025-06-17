@@ -42,3 +42,4 @@ func mix(_ point0: SparkleBrushCurvePoint, _ point1: SparkleBrushCurvePoint, t b
                                   size: mix(point0.size, point1.size, t: blend),
                                   color: mix(point0.color, point1.color, t: blend))
 }
+

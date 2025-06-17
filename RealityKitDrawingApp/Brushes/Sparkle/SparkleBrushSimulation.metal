@@ -5,7 +5,7 @@ Linezz
 Created by Sayan on 28.05.2025.
 
 Abstract:
-A compute kernel written in Metal Shading Language to simulate the particles in a Sparkle brush stroke, 
+A compute kernel written in Metal Shading Language to simulate the particles in a Sparkle brush stroke,
   and also to populate the mesh of a sparkle brush with the result of the simulation.
 */
 
@@ -61,4 +61,5 @@ void sparkleBrushSimulate(device const SparkleBrushParticle *particles [[buffer(
     // Write to output.
     output[particleIdx] = particle;
 }
+
 
