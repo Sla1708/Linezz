@@ -102,3 +102,4 @@ splashScreenBackgroundKernel(texture2d<float, access::write>  outTexture     [[t
     float4 outColor { out_red, out_green, 0, 0 };
     outTexture.write(outColor, gid);
 }
+

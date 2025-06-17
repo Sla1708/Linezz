@@ -38,3 +38,4 @@ inline float signed_distance_to_rounded_box(float2 p, float2 b, float4 r)
     float2 q = abs(p) - b + r.x;
     return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r.x;
 }
+

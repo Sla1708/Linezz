@@ -196,3 +196,4 @@ class DrawingDocument {
         wasDrawing[.right] = false
     }
 }
+
