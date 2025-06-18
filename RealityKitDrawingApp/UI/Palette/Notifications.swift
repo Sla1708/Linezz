@@ -22,5 +22,11 @@ extension Notification.Name {
     
     // Resume drawing input
     static let resumeDrawing = Notification.Name("resumeDrawing")
+    
+    // A new file/image was added
+    static let fileAdded = Notification.Name("fileAdded")
+    
+    // An error occurred during file import
+    static let fileImportError = Notification.Name("fileImportError")
 }
 

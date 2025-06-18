@@ -1,13 +1,4 @@
 //
-//  ImportedContentComponent.swift
-//  Linezz
-//
-//  Created by Sayan on 17.06.2025.
-//  Copyright © 2025 Apple. All rights reserved.
-//
-
-
-//
 //  ImportedContent.swift
 //  Linezz
 //

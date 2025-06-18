@@ -52,6 +52,7 @@
 		3AECFF322C006F5C00176926 /* DrawingCanvasPlacementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECFF312C006F5100176926 /* DrawingCanvasPlacementView.swift */; };
 		3AECFF342C00709600176926 /* DrawingCanvasVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECFF332C00709100176926 /* DrawingCanvasVisualizationView.swift */; };
 		A2510B0F2DF59BF900A44732 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2510B0E2DF59BF900A44732 /* Notifications.swift */; };
+		A2CB43BD2E01F78A00FEFCEB /* ImportedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB43BC2E01F78A00FEFCEB /* ImportedContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		8A319A4AB7527C79477470F5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A2510B0E2DF59BF900A44732 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		A25FB3B62DE7861A00DFDF7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A29AE4812E017221006819B5 /* Linezz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Linezz.entitlements; sourceTree = "<group>"; };
+		A2CB43BC2E01F78A00FEFCEB /* ImportedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedContent.swift; sourceTree = "<group>"; };
 		CE6D6D139AF68682151B497F /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +157,7 @@
 				3A7B00532BCB51A50068302D /* CurveProcessing.swift */,
 				3A0BFF742BE22A1E00BF194C /* MetalUtilities.swift */,
 				3ADB78A12AB3026E000BD147 /* MathUtilities.swift */,
+				A2CB43BC2E01F78A00FEFCEB /* ImportedContent.swift */,
 				3A7686E22AB263DA00762DDF /* RealityKitDrawingApp.swift */,
 			);
 			path = Utilities;
@@ -197,6 +201,7 @@
 		3A7686D22AB263DA00762DDF = {
 			isa = PBXGroup;
 			children = (
+				A29AE4812E017221006819B5 /* Linezz.entitlements */,
 				8A319A4AB7527C79477470F5 /* README.md */,
 				3A7686DD2AB263DA00762DDF /* RealityKitDrawingApp */,
 				A25FB3B62DE7861A00DFDF7E /* Info.plist */,
@@ -450,6 +455,7 @@
 				3AECFF342C00709600176926 /* DrawingCanvasVisualizationView.swift in Sources */,
 				3A5846792AD362E900EB71C4 /* CurveExtruder.swift in Sources */,
 				3A5BF7452BE6F3C6000A6CA1 /* DrawingCanvas.swift in Sources */,
+				A2CB43BD2E01F78A00FEFCEB /* ImportedContent.swift in Sources */,
 				3AB4781E2BFA755100C5E9C4 /* SparkleBrushCurvePoint.swift in Sources */,
 				3A6323C72BE0C61D00D82EC6 /* SparkleBrushSimulation.metal in Sources */,
 				3AECFF322C006F5C00176926 /* DrawingCanvasPlacementView.swift in Sources */,
@@ -596,6 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Linezz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RealityKitDrawingApp/Preview Content\"";
@@ -625,6 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Linezz.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RealityKitDrawingApp/Preview Content\"";

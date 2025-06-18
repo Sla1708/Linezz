@@ -1,5 +1,5 @@
 //
-//  DrawingCanvasVisualizationView.swift
+//  RealityKitDrawingApp.swift
 //  Linezz
 //
 //  Created by Sayan on 13.05.2025.
@@ -15,31 +15,28 @@ struct RealityKitDrawingApp: App {
     private static let immersiveSpaceWindowId: String = "ImmersiveSpace"
     
     /// The mode of the app determines which windows and immersive spaces should be open.
-    enum Mode: Equatable {
+    enum AppMode: Equatable {
         case splashScreen
         case chooseWorkVolume
         case drawing
         
-        var needsImmersiveSpace: Bool {
-            return self != .splashScreen
-        }
-        
-        var needsSpatialTracking: Bool {
-            return self != .splashScreen
-        }
+        var needsImmersiveSpace: Bool { self != .splashScreen }
+        var needsSpatialTracking: Bool { self != .splashScreen }
         
         fileprivate var windowId: String {
             switch self {
-            case .splashScreen: return splashScreenWindowId
-            case .chooseWorkVolume: return configureCanvasWindowId
-            case .drawing: return paletteWindowId
+            case .splashScreen: return RealityKitDrawingApp.splashScreenWindowId
+            case .chooseWorkVolume: return RealityKitDrawingApp.configureCanvasWindowId
+            case .drawing: return RealityKitDrawingApp.paletteWindowId
             }
         }
     }
     
-    @State private var mode: Mode = .splashScreen
+    @State private var appMode: AppMode = .splashScreen
     @State private var canvas = DrawingCanvasSettings()
     @State private var brushState = BrushState()
+    @State private var interactionMode: InteractionMode = .drawing
+    @State private var document: DrawingDocument?
     
     @State private var immersiveSpacePresented: Bool = false
     @State private var immersionStyle: ImmersionStyle = .mixed
@@ -50,10 +47,10 @@ struct RealityKitDrawingApp: App {
     @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     
-    @MainActor private func setMode(_ newMode: Mode) async {
-        let oldMode = mode
+    @MainActor private func setMode(_ newMode: AppMode) async {
+        let oldMode = appMode
         guard newMode != oldMode else { return }
-        mode = newMode
+        appMode = newMode
         
         if !immersiveSpacePresented && newMode.needsImmersiveSpace {
             immersiveSpacePresented = true
@@ -64,7 +61,10 @@ struct RealityKitDrawingApp: App {
         }
         
         openWindow(id: newMode.windowId)
-        dismissWindow(id: oldMode.windowId)
+        // Avoid closing the configure window when starting to draw.
+        if oldMode.windowId != newMode.windowId {
+            dismissWindow(id: oldMode.windowId)
+        }
     }
 
     var body: some Scene {
@@ -87,22 +87,28 @@ struct RealityKitDrawingApp: App {
             .windowResizability(.contentSize)
             
             WindowGroup(id: Self.paletteWindowId) {
-                PaletteView(brushState: $brushState)
-                    .frame(width: 450, height: 690, alignment: .top)
+                PaletteView(brushState: $brushState, interactionMode: $interactionMode, document: document)
+                    .frame(width: 450, height: 750, alignment: .top)
                     .fixedSize(horizontal: true, vertical: false)
             }
             .windowResizability(.contentSize)
 
             ImmersiveSpace(id: Self.immersiveSpaceWindowId) {
                 ZStack {
-                    if mode == .chooseWorkVolume || mode == .drawing {
+                    if appMode == .chooseWorkVolume || appMode == .drawing {
                         DrawingCanvasVisualizationView(settings: canvas)
                     }
                     
-                    if mode == .chooseWorkVolume {
+                    if appMode == .chooseWorkVolume {
                         DrawingCanvasPlacementView(settings: canvas)
-                    } else if mode == .drawing {
-                        DrawingMeshView(canvas: canvas, brushState: $brushState)
+                    } else if appMode == .drawing {
+                        // This view creates and owns the document, binding it back to the app state
+                        DrawingMeshView(
+                            canvas: canvas,
+                            brushState: $brushState,
+                            interactionMode: $interactionMode,
+                            document: $document
+                        )
                     }
                 }
                 .frame(width: 0, height: 0).frame(depth: 0)
@@ -113,7 +119,7 @@ struct RealityKitDrawingApp: App {
 }
 
 struct SetModeKey: EnvironmentKey {
-    typealias Value = (RealityKitDrawingApp.Mode) async -> Void
+    typealias Value = (RealityKitDrawingApp.AppMode) async -> Void
     static let defaultValue: Value = { _ in }
 }
 
@@ -123,4 +129,3 @@ extension EnvironmentValues {
         set { self[SetModeKey.self] = newValue }
     }
 }
-
